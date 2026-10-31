@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>目前可行的 Claude 不封号办法：¥15 普号 + Session Key 登录 funclaude</title>
+<meta name="description" content="用约 15 元 Claude Mail 邮箱普号拿到 Session Key，在 funclaude（claude.ai 镜像站）粘贴登录的实测笔记。仅供个人学习、风险自负。">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f4f1eb;color:#272623;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.95}
+main{max-width:940px;margin:48px auto;background:#fff;padding:60px 64px;border:1px solid #e7e1d8;border-radius:18px}
+header{font-size:12px;letter-spacing:.15em;color:#1f7a4d;margin-bottom:20px}
+h1{font-size:34px;line-height:1.45;letter-spacing:-.025em;margin:0 0 28px}
+h2{font-size:24px;line-height:1.55;margin:48px 0 18px;padding-top:22px;border-top:1px solid #eee8df}
+p,li{font-size:17px}
+strong{font-weight:650}
+a{color:#0f766e;overflow-wrap:anywhere}
+img{display:block;max-width:100%;height:auto;border:1px solid #e8e4de;border-radius:10px;margin:24px auto 12px}
+blockquote{margin:26px 0;padding:12px 22px;border-left:3px solid #22c55e;background:#f3faf5;color:#3f4a42}
+blockquote p{font-size:14px;margin:6px 0}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;background:#f3f0e9;border-radius:4px;padding:2px 5px;overflow-wrap:anywhere}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:24px 0;line-height:1.7}
+th,td{border:1px solid #e4ded4;padding:13px;text-align:left;overflow-wrap:anywhere}
+th{background:#f3eee5}
+hr{border:0;border-top:1px solid #eee8df;margin:36px 0}
+footer{border-top:1px solid #eee8df;margin-top:40px;padding-top:20px;color:#8b8073;font-size:13px}
+ol,ul{padding-left:1.4em}
+@media(max-width:680px){main{margin:0;border:0;border-radius:0;padding:30px 20px}h1{font-size:26px}h2{font-size:21px}p,li{font-size:16px}}
+</style>
+</head>
+<body>
+<main>
+<header>实测笔记 · Claude Session Key × funclaude · 2026.10.31</header>
+<h1>目前可行的 Claude 不封号办法：¥15 普号 + Session Key 登录 funclaude</h1>
+<p>Claude 好用，但国内账号/环境一不稳，就容易掉订阅甚至直接封号。很多人不是不会用，而是<strong>号本身太「热」、登录姿势不对</strong>，风控一扫就中招。</p>
+<p>这篇文章只记一条<strong>目前实测还能走通</strong>的路径：<strong>约 15 元买 Claude Mail 邮箱普号 → 拿到 Session Key → 在 funclaude（claude.ai 镜像站）用 Session Key 登录</strong>。我这边按这个流程测过一段时间，暂时还没碰到封号；但<strong>不保证长期、不保证人人都能复制</strong>，请当个人学习笔记，风险自负。</p>
+<p>先把两个入口备好（纯文本，复制打开即可）：</p>
+<p>购买页（Claude 套餐）：</p>
+<p>https://chongzhi.chatgpt-plus.top/claude/</p>
+<p>登录站（funclaude / claude.ai 镜像）：</p>
+<p>https://fun.hugai.top/login</p>
+<hr />
+<h2>一、痛点：为什么老被封</h2>
+<p>常见翻车点大致就这几类：</p>
+<table>
+<thead>
+<tr>
+<th>情况</th>
+<th>常见结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>直接用「热号 / 共享号」网页登录</td>
+<td>风控敏感，秒封或掉订阅</td>
+</tr>
+<tr>
+<td>环境乱跳（节点、时区、浏览器不一致）</td>
+<td>能登一会儿，后面莫名异常</td>
+</tr>
+<tr>
+<td>账号密码交给代登</td>
+<td>隐私风险 + 号容易被重复使用</td>
+</tr>
+<tr>
+<td>当天新号就冲 Pro</td>
+<td>失败率高，且封了多半不质保</td>
+</tr>
+</tbody>
+</table>
+<p>一句话：<strong>号要干净一点，登录姿势要轻一点。</strong> 下面这条路的思路，就是尽量避开「热登录」，改用 Session Key + 镜像站。</p>
+<hr />
+<h2>二、思路：普号 + 镜像 + Session Key</h2>
+<p>整条链路可以拆成三步：</p>
+<ol>
+<li><strong>买一个便宜的 Claude Mail 邮箱普号</strong>（成本大约 ¥15 / 账号）</li>
+<li><strong>按发货说明拿到 Session Key</strong>（一般是一串带 <code>sk-ant-sid</code> 特征的长串）</li>
+<li><strong>打开 funclaude，粘贴 Session Key 登录</strong>，进去后按日常对话用</li>
+</ol>
+<p>为什么这么配：</p>
+<ul>
+<li>普号成本低，试错压力小</li>
+<li>Session Key 登录比反复输账密更「安静」一些（仍非官方推荐方式）</li>
+<li>镜像站把访问路径收拢到一处，个人测试时手感比较稳</li>
+</ul>
+<p>再次强调：<strong>这是「目前可行 / 测试较稳」</strong>，不是「永不封号」。官方策略一变，方法可能立刻失效。</p>
+<hr />
+<h2>三、买普号：约 15 元拿 Claude Mail 邮箱号</h2>
+<p>打开购买页：</p>
+<p>https://chongzhi.chatgpt-plus.top/claude/</p>
+<p>页面里当前常见两档（以当时页面为准）：</p>
+<ul>
+<li><strong>Claude Mail 邮箱普号</strong>：约 <strong>¥15 / 账号</strong>，自动发货</li>
+<li><strong>Claude Pro 官方充值卡密</strong>：约 <strong>¥199 / 月</strong>（额度不够时再考虑升级，见后文）</li>
+</ul>
+<p>主线先买左边这档 <strong>邮箱普号</strong>。点「立即下单」，按订单页完成支付；库存不足时按页上说明联系客服。</p>
+<p><img alt="充值站 Claude 套餐页：普号 ¥15 与 Pro ¥199" src="https://upload.maynor1024.live/file/1793421502805_01-chongzhi-claude-plans.png" /></p>
+<p>下单注意：</p>
+<ul>
+<li>价格、库存、使用说明<strong>一律以下单页实时显示为准</strong></li>
+<li>看清发货方式（自动发货 / 是否附 Session Key 说明）</li>
+<li>客服沟通时只谈订单本身，<strong>不要把无关账号密码随手发出去</strong></li>
+</ul>
+<hr />
+<h2>四、拿到 Session Key（发货内容长什么样）</h2>
+<p>支付成功后，按订单页或客服指引查收发货内容。个人这边收到的 Session Key，通常是一段很长的字符串，特征类似：</p>
+<ul>
+<li>中间会出现 <code>--sk-ant-sid...</code> 一类片段</li>
+<li>一整段需要<strong>完整复制</strong>，少复制一行就会登录失败</li>
+</ul>
+<p>示意（已打码，仅展示形态）：</p>
+<p><img alt="聊天里收到的 sessionkey 示例（已打码）" src="https://upload.maynor1024.live/file/1793421508821_03-sessionkey-chat-example.png" /></p>
+<p>复制时建议：</p>
+<ol>
+<li>用「全选 + 复制」，避免漏行、漏空格</li>
+<li>先粘到本地记事本核对首尾，再贴进登录框</li>
+<li><strong>不要把完整 Key 发到公开群、截图别不打码就外传</strong></li>
+</ol>
+<p>Session Key 等同于登录凭证，丢了或泄露了，等于把号交出去。</p>
+<hr />
+<h2>五、funclaude 登录：粘贴 Session Key 进入</h2>
+<p>打开登录站：</p>
+<p>https://fun.hugai.top/login</p>
+<p>页面标题一般是 <strong>funclaude</strong>，副标题 <strong>claude.ai 镜像站</strong>。中间只有一个 <strong>Session Key</strong> 输入框，下方橙色按钮 <strong>进入</strong>。</p>
+<p>操作：</p>
+<ol>
+<li>把上一步复制的完整 Session Key 粘贴进输入框</li>
+<li>点 <strong>进入</strong></li>
+<li>能正常进对话页，就算通了；随便发一句短消息做连通性测试</li>
+</ol>
+<p><img alt="funclaude Session Key 登录页" src="https://upload.maynor1024.live/file/1793421502260_02-funclaude-sessionkey-login.png" /></p>
+<p>若进不去，优先自查：</p>
+<ul>
+<li>Key 是否少复制了一截</li>
+<li>首尾是否多了空格、引号</li>
+<li>浏览器插件是否改写了粘贴内容</li>
+<li>购买页/发货说明是否提示该号已失效（失效就别反复撞）</li>
+</ul>
+<hr />
+<h2>六、额度不够可升 Pro</h2>
+<p>普号先用来验证登录姿势；如果日常对话/长文<strong>用量不够</strong>，可以在同一套号上再升级到 <strong>Claude Pro</strong>。</p>
+<p>怎么升（个人实测口径）：</p>
+<ul>
+<li>一般只要提供 <strong>organize id</strong>（组织 / 账号侧 ID；具体叫法以客服或订单页指引为准）</li>
+<li>按客服或订单页说明提交后开通，<strong>通常不用再交一套账号密码</strong></li>
+<li>价格可参考购买页上的 <strong>Claude Pro 官方充值卡密</strong>，大约 <strong>¥199 / 月</strong>（以页面实时标价为准）</li>
+</ul>
+<p>购买页（纯文本）：</p>
+<p>https://chongzhi.chatgpt-plus.top/claude/</p>
+<p>务必看清这一条：</p>
+<p><strong>升级到 Pro 同样不保证不封号。</strong> Pro 只解决额度/权益，不解决风控；升完仍可能掉订阅或封号，接受不了就别升，风险自负。</p>
+<hr />
+<h2>七、使用注意（降风险，不是免死金牌）</h2>
+<p>把预期摆正：这是个人学习向的备用姿势，<strong>不能当成生产环境 SLA</strong>。</p>
+<p>建议习惯：</p>
+<ol>
+<li><strong>固定环境</strong>：尽量同一浏览器、少换设备乱登</li>
+<li><strong>先当生产力工具用</strong>：正常问答、改文、写代码；别一上来高强度刷怪请求</li>
+<li><strong>Key 当密码保管</strong>：本地备一份即可，别多端同步到不明云盘</li>
+<li><strong>失效就停</strong>：连续异常、提示组织/账号问题时，先停手，别死磕同一 Key</li>
+<li><strong>别迷信「不封号」标题</strong>：风控规则会变；今天稳，不代表下周稳</li>
+</ol>
+<p>不建议：</p>
+<ul>
+<li>把 Session Key 分享给多人同时用</li>
+<li>在未确认来源的站点到处粘贴同一条 Key</li>
+<li>把「普号试玩」直接当成企业主号长期硬刚</li>
+</ul>
+<p>售后边界也要心里有数：第三方商品页通常对<strong>封号 / 破甲</strong>说明很严（很多直接写不做售后）。下单前把订单页条款读完，接受不了就别拍。</p>
+<hr />
+<h2>八、最短复盘清单</h2>
+<ol>
+<li>打开 https://chongzhi.chatgpt-plus.top/claude/ ，买 <strong>Claude Mail 邮箱普号</strong>（约 ¥15）</li>
+<li>按发货拿到 <strong>Session Key</strong>，完整复制</li>
+<li>打开 https://fun.hugai.top/login ，粘贴 Key → <strong>进入</strong></li>
+<li>发一条短消息确认能聊</li>
+<li>日常轻用、保管好 Key；异常就停</li>
+<li>（可选）量不够再升 Pro：按客服/订单页提供 <strong>organize id</strong>；约 ¥199/月以购买页为准——<strong>升 Pro 也不保证不封号</strong></li>
+</ol>
+<hr />
+<h2>九、收个尾</h2>
+<p>如果你也被 Claude 封号折腾过，可以先用这条低成本路径验证「普号 + Session Key + 镜像站」是否适合你的网络与使用习惯。我这边测试阶段比较稳，但<strong>仅供个人学习参考，风险自负</strong>；正式生产、重要数据请走你自己认可的合规渠道。</p>
+<p>完整图文与步骤备份（GitHub Pages，发布后可用）：</p>
+<p>https://maynor996.github.io/claude-sessionkey-funclaude-guide-2026/</p>
+<p>仓库备份：</p>
+<p>https://github.com/Maynor996/claude-sessionkey-funclaude-guide-2026</p>
+<p>购买页再贴一次（纯文本）：</p>
+<p>https://chongzhi.chatgpt-plus.top/claude/</p>
+<p>登录站再贴一次（纯文本）：</p>
+<p>https://fun.hugai.top/login</p>
+<p>可选友链（额度重置雷达，用得到再开）：</p>
+<p>https://codexinstall.asia/zh/codex-reset/</p>
+<footer>个人学习向笔记 · 风险自负 · 镜像：GitHub Pages · 仓库 Maynor996/claude-sessionkey-funclaude-guide-2026</footer>
+</main>
+</body>
+</html>
