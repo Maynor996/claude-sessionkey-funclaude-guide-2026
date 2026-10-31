@@ -109,6 +109,10 @@ https://fun.hugai.top/login
 
 ![funclaude Session Key 登录页](https://upload.maynor1024.live/file/1793421502260_02-funclaude-sessionkey-login.png)
 
+点 **进入** 后，登录成功大致长这样（对话首页，可见 Free plan 与用户名）：
+
+![funclaude 登录成功后的 Claude 对话首页](https://upload.maynor1024.live/file/1793422368343_04-claude-login-success.png)
+
 若进不去，优先自查：
 
 - Key 是否少复制了一截

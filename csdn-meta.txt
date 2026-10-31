@@ -1,9 +1,10 @@
 标题: 目前可行的 Claude 不封号办法：¥15 普号 + Session Key 登录 funclaude
 建议分类: 人工智能 / 开发工具 / 经验分享（以账号后台可选为准）
 建议标签: Claude,Session Key,funclaude,Claude镜像,邮箱普号,AI教程,Anthropic
-摘要: 用约 15 元 Claude Mail 邮箱普号拿到 Session Key，在 funclaude（claude.ai 镜像站）粘贴登录的实测笔记；量不够可凭 organize id 升 Pro（约 ¥199/月，以购买页为准），升 Pro 同样不保证不封号。含购买页、发货 Key 形态、登录页三张实机截图。仅供个人学习、风险自负。
-图床: 正文已用 https://upload.maynor1024.live/ 完整 URL；外链转存失败则本地上传 assets/ 三图
+摘要: 用约 15 元 Claude Mail 邮箱普号拿到 Session Key，在 funclaude（claude.ai 镜像站）粘贴登录的实测笔记；量不够可凭 organize id 升 Pro（约 ¥199/月，以购买页为准），升 Pro 同样不保证不封号。含购买页、发货 Key 形态、登录页与登录成功等四张实机截图。仅供个人学习、风险自负。
+图床: 正文已用 https://upload.maynor1024.live/ 完整 URL；外链转存失败则本地上传 assets/ 四图
 URL 习惯: 购买/登录 URL 保持纯文本（无 markdown 蓝链）
 账号: CSDN xianyu120 · 原创公开
 可贴正文: /workspace/claude-sessionkey-funclaude-guide-2026/csdn-body.md
 亦可: /workspace/claude-sessionkey-noban-guide/article.md
+新图: https://upload.maynor1024.live/file/1793422368343_04-claude-login-success.png
